@@ -1,101 +1,97 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta name="author" content="Juan Francisco Galván">
   <meta name="date" content="22/10/2023">
-  <meta name="description" content="Formulario de contacto">
-  <meta name="keywords" content="Formulario">
+  <meta name="description" content="Form">
+  <meta name="keywords" content="Form">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-  <link rel="preload" href="images/fondo.jpg" as="image">
+  <link rel="preload" href="images/background.jpg" as="image">
   <link rel="preload" href="style.css" as="style">
   <link rel="stylesheet" href="style.css">
-  <title>Marca Verde</title>
+  <title>Green Life</title>
 </head>
 <body>
-  <div class="contenedor">
-    <header class="encabezado">
-      <h1 class="encabezado-titulo">Marca Verde</h1>
-      <p class="encabezado-texto">Gracias por tomarte el tiempo en visitarnos</p>
+  <main class="container">
+    <header class="header">
+      <h1 id="title" class="title">Green Life</h1>
+      <p id="description">Thank you for visited us.</p>
     </header>
-    <!-- Formulario -->
-    <form id="formulario">
-      <div class="grupo">
-        <label id="nombre" for="nombre">Nombre</label>
-        <input type="text" name="nombre" id="nombre" class="control" placeholder="Tu Nombre" required>
+    <form id="survey-form">
+      <div class="form-group">
+        <label id="name-label" for="name">Name</label>
+        <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" required>
       </div>
-      <div class="grupo">
-        <label id="correo" for="correo">Correo Electrónico</label>
-        <input type="email" name="correo" id="correo" class="control" placeholder="Tu Correo Electrónico" required>
+      <div class="form-group">
+        <label id="email-label" for="email">Email</label>
+        <input type="email" name="email" id="email" class="form-control" placeholder="Your Email" required>
       </div>
-      <div class="grupo">
-        <label id="edad" for="edad">Edad<span class="letra">(Opcional)</span></label>
-        <input type="number" name="edad" id="edad" min="1" max="99" class="control" placeholder="Tu Edad">
+      <div class="form-group">
+        <label id="number-label" for="number">Age<span class="clue">(Optional)</span></label>
+        <input type="number" name="age" id="number" min="1" max="99" class="form-control" placeholder="Your Age">
       </div>
-      <!-- Rol -->
-      <div class="grupo">
-        <label for="desplegable">¿Cuál es tu rol actualmente?</label>
-        <select id="desplegable" name="rol" class="control" required>
-          <option disabled selected value>Seleccioná tu rol</option>
-          <option value="estudiante">Estudiante</option>
-          <option value="profesor">Profesor</option>
-          <option value="cientifico">Científico</option>
-          <option value="activista">Activista</option>
-          <option value="filantropo">Filántropo</option>
-          <option value="curioso">Curioso</option>
+      <div class="form-group">
+        <label for="dropdown">¿What is your role currently?</label>
+        <select id="dropdown" name="role" class="form-control" required>
+          <option disabled selected value>Select your role</option>
+          <option value="estudiante">Student</option>
+          <option value="profesor">Professor</option>
+          <option value="cientifico">Scientist</option>
+          <option value="activista">Activist</option>
+          <option value="filantropo">Philanthropist</option>
+          <option value="curioso">Curious</option>
         </select>
       </div>
-      <!-- Recomendación -->
-      <div class="grupo">
-        <p>¿Recomendarías Marca Verde a un amigo?</p>
+      <div class="form-group">
+        <p>¿Would you recommend Green Life to a friend?</p>
         <label>
-          <input name="recomendacion" value="por-supuesto" type="radio" class="entrada-radio" checked>Por Supuesto
+          <input name="user-recommend" value="definitely" type="radio" class="input-radio" checked>Definitely
         </label>
         <label>
-          <input name="recomendacion" value="tal-vez" type="radio" class="entrada-radio">Tal Vez
+          <input name="user-recommend" value="maybe" type="radio" class="input-radio">Maybe
         </label>
         <label>
-          <input name="recomendacion" value="no-estoy-seguro" type="radio" class="entrada-radio">No Estoy Seguro
+          <input name="user-recommend" value="not-sure" type="radio" class="input-radio">Not Sure
         </label>
       </div>
-      <!-- Aporte -->
-      <div class="grupo">
-        <label for="aporte">¿Cuál fue tu aporte favorito de Marca Verde?</label>
-        <select id="aporte" name="aporte" class="control" required>
-          <option disabled selected value>Seleccioná una opcion</option>
-          <option value="noticias">Noticias</option>
-          <option value="documentacion">Documentación</option>
-          <option value="informacion">Información</option>
+      <div class="form-group">
+        <label for="most-like">¿What is your favorite Green Life contribution?</label>
+        <select id="most-like" name="mostLike" class="form-control" required>
+          <option disabled selected value>Select an option</option>
+          <option value="news">News</option>
+          <option value="documentation">Documentation</option>
+          <option value="information">Information</option>
           <option value="videos">Videos</option>
         </select>
       </div>
-      <!-- Implementación -->
-      <div class="grupo">
-        <p>¿Qué te gustaría implementar?<span class="letra">(Marcá lo que corresponda)</span></p>
+      <div class="form-group">
+        <p>¿What would you like to see improved?<span class="clue">(Check all that apply)</span></p>
         <label>
-          <input name="implementacion" value="desafios" type="checkbox" class="entrada-casilla">Desafíos
+          <input name="prefer" value="challenges" type="checkbox" class="input-checkbox">Challenges
         </label>
         <label>
-          <input name="implementacion" value="proyectos" type="checkbox" class="entrada-casilla">Proyectos
+          <input name="prefer" value="projects" type="checkbox" class="input-checkbox">Projects
         </label>
         <label>
-          <input name="implementacion" value="eventos" type="checkbox" class="entrada-casilla">Eventos
+          <input name="prefer" value="events" type="checkbox" class="input-checkbox">Events
         </label>
         <label>
-          <input name="implementacion" value="conferencias" type="checkbox" class="entrada-casilla">Conferencias
+          <input name="prefer" value="conferences" type="checkbox" class="input-checkbox">Conferences
         </label>
       </div>
-      <!-- Sugerencia -->
-      <div class="grupo">
-        <p>¿Tenés alguna sugerencia?</p>
-        <textarea name="comentario" id="comentario" placeholder="Ingresá tu Comentario" class="entrada-comentario"></textarea>
+      <div class="form-group">
+        <p>¿Do you have any suggestion?</p>
+        <textarea name="comment" id="comment" placeholder="Enter your comment here..." class="input-textarea"></textarea>
       </div>
-      <div class="grupo">
-        <button type="submit" id="enviar" class="boton-enviar">Enviar</button>
+      <div class="form-group">
+        <button type="submit" id="submit" class="submit-button">Submit</button>
       </div>
     </form>
-    <p class="pie">Creado por Juan Francisco Galván</p>
-  </div>
+    <footer class="footer">
+      <p class="footer-text">Created by Juan Francisco Galván</p>
+    </footer>
+  </main>
 </body>
 </html>
